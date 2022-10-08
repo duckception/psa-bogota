@@ -1,0 +1,16 @@
+{
+  "name": "monorepo",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "check": "turbo run build lint test",
+    "start:dev": "turbo run start:dev --no-cache"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "turbo": "^1.2.16"
+  },
+  "packageManager": "pnpm@7.5.0"
+}
