@@ -13,16 +13,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <Link href='https://livepeer.studio'>Welcome to Livepeer Studio! 🎥 </Link>
+        <Link href='livestream'>PUBLIC SERVICE ANNOUNCEMENT </Link>
         </h1>
 
         <div className={styles.grid}>
-          <Link href='livestream'>
-            <a className={styles.card}>
-              <h2>LiveStream &rarr;</h2>
-              <p>Learn all about Livepeer Studio&apos;s Livestream</p>
-            </a>
-          </Link>
         </div>
       </main>
     </div>
