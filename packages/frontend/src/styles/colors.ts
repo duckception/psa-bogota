@@ -1,0 +1,18 @@
+export const COLORS = {
+  white: '#FFF',
+  primary100: '#F9F8FF',
+  primary400: '#A673EF',
+  primary500: '#8247E5',
+  disabledDark: '#E2E4E8',
+  disabledLight: '#EEEFF2',
+  primaryFocus: '#DCD4FF',
+  warning500: '#FFAD0D',
+  warning400: '#FFC749',
+  warning100: '#FFF5CE',
+  gray400: '#E2E4E8',
+  gray100: '#FAFAFB',
+  gray900: '#8C93A3',
+  gray600: '#B2B7C2',
+  red500: '#FF3236',
+  green500: '#5FC92E',
+}
