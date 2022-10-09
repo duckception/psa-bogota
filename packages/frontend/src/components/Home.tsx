@@ -1,14 +1,17 @@
 import {useEthers} from "@usedapp/core";
 import {useModal} from "../hooks/useModal";
 import {ConnectWalletModal} from "./ConnectWalletModal";
-import {StreamFeed} from "./stream/StreamFeed"
-import styled from 'styled-components'
+import {StreamFeed} from "./stream/StreamFeed";
+import styled from 'styled-components';
+import {useState} from 'react';
 
 
 
 function Home() {
   const { account } = useEthers()
   const { isShown, toggle } = useModal()
+  const [visible, setVisible] = useState(false);
+
 
   return (
     <>
@@ -25,10 +28,11 @@ function Home() {
 
       {!isShown && account ? 
       <StreamFeedWrapper>
-        <StreamFeed/> 
+        <StreamFeed isVisible={visible}/> 
 
       </StreamFeedWrapper>
       : null}
+
     </>
   )
 }

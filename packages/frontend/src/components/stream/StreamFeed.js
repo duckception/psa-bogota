@@ -6,9 +6,14 @@ import { Player } from '@livepeer/react';
 import NEXT_PUBLIC_STREAM_ID from '../../constants/livepeer.ts';
 import { Link } from 'react-router-dom';
 
+interface Visibility {
+    isVisible: boolean
+}
 
-export function StreamFeed() {
+export function StreamFeed(props: Visibility) {
     const [getStreamInfo, setGetStreamInfo] = useState('');
+    const {isVisible} = props;
+    // const [visible, setVisible] = useState('false');
   
     async function getStream() {
       // const streamID = process.env.NEXT_PUBLIC_STREAM_ID
@@ -37,7 +42,9 @@ export function StreamFeed() {
           <div className={styles.card} key={getStreamInfo.id}>
               {getStreamInfo.isActive ? (
                 <>
-                  <Player
+                {isVisible ? (
+                    <>
+                    <Player
                     playbackId={`${getStreamInfo.playbackId}`}
                     autoPlay={true}
                     width={300}
@@ -48,6 +55,15 @@ export function StreamFeed() {
                   <p>Stream Status:</p>
                   <p className={styles.ready}>Live Now!</p>
                   <p> {getStreamInfo.name} </p>
+                  </>
+                ) : (
+                    <>
+                    <p>Stream Status:</p>
+                  <p className={styles.ready}>Live Now!</p>
+                  <p> {getStreamInfo.name} </p>
+                    </>
+                )}
+                  
                 </>
               ) : (
                 <>
