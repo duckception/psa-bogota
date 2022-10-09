@@ -12,6 +12,8 @@ import styled from 'styled-components'
 function Home() {
   const { account, library } = useEthers()
   const { isShown, toggle } = useModal()
+  const [visible, setVisible] = useState(false);
+
 
   const [isStart, setIsStart] = useState(true)
   const [sf, setSf] = useState<Framework>()
@@ -123,7 +125,7 @@ function Home() {
 
       {!isShown && account ?
         <StreamFeedWrapper>
-          <StreamFeed/>
+          <StreamFeed isVisible={visible}/>
 
         </StreamFeedWrapper>
         : null}
