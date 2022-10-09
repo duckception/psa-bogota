@@ -1,7 +1,8 @@
-
-
-
-
+import React from 'react';
+import { useState, useEffect } from 'react';
+import logo from '../../images/coinbase.png';
+import styles from '../styles/livepeer.css';
+import { VideoPlayer } from '@livepeer/react';
 
 export function StreamFeed() {
     const [getStreamInfo, setGetStreamInfo] = useState('');
@@ -31,7 +32,7 @@ export function StreamFeed() {
   
         {!getStreamInfo ? null : (
           <div className={styles.card} key={getStreamInfo.id}>
-            <Link href={`/streams/${getStreamInfo.id}`}>
+            <a href={`/streams/${getStreamInfo.id}`}>
               {getStreamInfo.isActive ? (
                 <a>
                   <VideoPlayer
@@ -47,13 +48,13 @@ export function StreamFeed() {
                 </a>
               ) : (
                 <a>
-                  <Image src={logo} alt='Livepeer Studio Logo' width='50' height='50' />
+                  <img src={logo} alt='Livepeer Studio Logo' width='50' height='50' />
                   <h2> {getStreamInfo.name} </h2>
                   <p>Stream Status:</p>
                   <p className={styles.failed}>Not Live</p>
                 </a>
               )}
-            </Link>
+            </a>
           </div>
         )}
       </main>

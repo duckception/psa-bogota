@@ -1,1 +1,1 @@
-export const WEB3AUTH_CLIENT_ID = ''
+export const WEB3AUTH_CLIENT_ID = 'BFg3vaNLBJFcJZwG4AXbHGXz4glueIVJyQgfj59fSi5aVsqvZ-fmyz506HTQBO_JBb9iTIW7uzCZcLqw97oU8O0'
