@@ -6,7 +6,6 @@ import MetaMask from '../images/metamask.png'
 import Coinbase from '../images/coinbase.png'
 import WConnect from '../images/walletConnect.png'
 import W3auth from '../images/web3auth.jpeg'
-import {Button} from "./Button";
 
 export function ConnectWallet() {
   const { account } = useEthers()
@@ -32,10 +31,10 @@ export function ConnectWallet() {
           : (<>
             <CenteredHeader>Connect With:</CenteredHeader>
             <ButtonsWrapper>
-              <Button onClick={activateBrowserWallet}><Img src={MetaMask} />&nbsp;Metamask</Button>
-              <Button onClick={activateWeb3AuthWallet}><Img src={W3auth} />&nbsp;Web3Auth</Button>
-              <Button onClick={activateWalletConnect}><Img src={WConnect} />&nbsp;WalletConnect</Button>
-              <Button onClick={activateWalletLink}><Img src={Coinbase} />&nbsp;Coinbase Wallet</Button>
+              <button onClick={activateBrowserWallet}><Img src={MetaMask} />&nbsp;Metamask</button>
+              <button onClick={activateWeb3AuthWallet}><Img src={W3auth} />&nbsp;Web3Auth</button>
+              <button onClick={activateWalletConnect}><Img src={WConnect} />&nbsp;WalletConnect</button>
+              <button onClick={activateWalletLink}><Img src={Coinbase} />&nbsp;Coinbase Wallet</button>
             </ButtonsWrapper>
             <br/>
           </>)
