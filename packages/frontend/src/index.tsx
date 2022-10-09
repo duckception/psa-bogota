@@ -1,12 +1,20 @@
-import { Config, DAppProvider } from '@usedapp/core'
+import {Config, DAppProvider, Optimism} from '@usedapp/core'
 import React from 'react'
 
 import { App } from './App'
 import { FontStyles } from './styles/fonts'
 import {createRoot} from "react-dom/client";
 import {WalletsProvider} from "./providers/WalletsProvider/WalletsProvider";
+import {NETWORK_CONNECTIONS} from "./constants/chains";
 
-const config: Config = {}
+const config: Config = {
+  readOnlyChainId: Optimism.chainId,
+  readOnlyUrls: NETWORK_CONNECTIONS,
+  pollingInterval: 100,
+  notifications: {
+    checkInterval: 100
+  }
+}
 
 const container = document.getElementById('root')
 const root = createRoot(container!);
