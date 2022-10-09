@@ -5,6 +5,7 @@ import {useCallback, useEffect, useState} from "react";
 import { Framework } from "@superfluid-finance/sdk-core";
 import {ethers} from "ethers";
 import {formatUnits} from "ethers/lib/utils";
+import {StreamFeed} from "./stream/StreamFeed"
 
 function Home() {
   const { account, library } = useEthers()
