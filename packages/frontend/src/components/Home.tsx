@@ -6,6 +6,8 @@ import { Framework } from "@superfluid-finance/sdk-core";
 import {ethers} from "ethers";
 import {formatUnits} from "ethers/lib/utils";
 import {StreamFeed} from "./stream/StreamFeed"
+import styled from 'styled-components'
+
 
 function Home() {
   const { account, library } = useEthers()
@@ -119,9 +121,19 @@ function Home() {
       <br/>
       <button onClick={() => doThis()}>{isStart ? 'Play' : 'Pause'}</button>
 
-      <StreamFeed/>
+      {!isShown && account ?
+        <StreamFeedWrapper>
+          <StreamFeed/>
+
+        </StreamFeedWrapper>
+        : null}
     </>
   )
 }
+
+const StreamFeedWrapper = styled.div`
+  width: 48vw;
+  height: 27vh;
+`
 
 export default Home
