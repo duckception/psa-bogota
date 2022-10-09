@@ -8,12 +8,13 @@ import {formatUnits} from "ethers/lib/utils";
 import {StreamFeed} from "./stream/StreamFeed"
 import styled from 'styled-components'
 
+import {Notifications} from "./Notifications";
+
 
 function Home() {
   const { account, library } = useEthers()
   const { isShown, toggle } = useModal()
   const [visible, setVisible] = useState(false);
-
 
   const [isStart, setIsStart] = useState(true)
   const [sf, setSf] = useState<Framework>()
@@ -105,13 +106,14 @@ function Home() {
   }, [sf, library, account])
 
   const tokenBalance = useTokenBalance('0xd782AC4Ee247e0986522ca05c08Cda330DFc14c4', account)
-  const etherBalance = useEtherBalance(account)
+  // const etherBalance = useEtherBalance(account)
 
   return (
     <>
+      <Notifications />
       <div>Account: {account}</div>
-      <div>Token2 Balance: {formatUnits(tokenBalance ?? ethers.constants.Zero, 18)}</div>
-      <div>Ether Balance: {formatUnits(etherBalance ?? ethers.constants.Zero, 18)}</div>
+      <div>Token Balance: {formatUnits(tokenBalance ?? ethers.constants.Zero, 18)}</div>
+      {/*<div>Ether Balance: {formatUnits(etherBalance ?? ethers.constants.Zero, 18)}</div>*/}
         <button onClick={toggle}>{account ? 'Change Wallet' : 'Connect Wallet'}</button>
 
       {isShown && (

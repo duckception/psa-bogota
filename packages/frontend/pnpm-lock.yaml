@@ -2,6 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@livepeer/react': ^1.0.6
+  '@pushprotocol/restapi': ^0.1.1
+  '@pushprotocol/socket': ^0.1.0
+  '@pushprotocol/uiembed': ^0.1.1
   '@radix-ui/react-dialog': ^1.0.0
   '@superfluid-finance/sdk-core': ^0.5.6
   '@testing-library/jest-dom': ^5.16.5
@@ -30,6 +33,7 @@ specifiers:
   react-dom: ^18.2.0
   react-router-dom: ^6.4.2
   react-scripts: 5.0.1
+  socket.io-client: ^4.5.2
   stream-browserify: ^3.0.0
   stream-http: ^3.2.0
   styled-components: ^5.3.6
@@ -39,6 +43,9 @@ specifiers:
 
 dependencies:
   '@livepeer/react': 1.0.6_bfb4ch7ozmyf2qlhztufdyccmu
+  '@pushprotocol/restapi': 0.1.1_ethers@5.7.1
+  '@pushprotocol/socket': 0.1.0_ethers@5.7.1
+  '@pushprotocol/uiembed': 0.1.1
   '@radix-ui/react-dialog': 1.0.0_rj7ozvcq3uehdlnj3cbwzbi5ce
   '@superfluid-finance/sdk-core': 0.5.6_w6qmtmhn5nacga5ntmxmt5fmni
   '@testing-library/jest-dom': 5.16.5
@@ -58,6 +65,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_ub74iwwfmvnvzieguokpmxbmpy
+  socket.io-client: 4.5.2
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
   typescript: 4.8.4
   web-vitals: 2.1.4
@@ -2439,6 +2447,39 @@ packages:
       source-map: 0.7.4
       webpack: 5.74.0
       webpack-dev-server: 4.11.1_webpack@5.74.0
+
+  /@pushprotocol/restapi/0.1.1_ethers@5.7.1:
+    resolution: {integrity: sha512-Am95rcEu6p/7XbvkuiBr8SlQ9/or9q1FN5Zu7LsScBPv6vp6cKF5MeQFebdZcKvvKru9k/HkxtIeNVQxFjQr4Q==}
+    peerDependencies:
+      ethers: ^5.6.8
+    dependencies:
+      axios: 0.27.2
+      ethers: 5.7.1
+      tslib: 2.4.0
+      uuid: 9.0.0
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /@pushprotocol/socket/0.1.0_ethers@5.7.1:
+    resolution: {integrity: sha512-YOjyBMFzofnyDSFmxT+8hJTCi3we0LNGfZCE82P5+t9w9E+BQM3tGgP77ggTEvfcp+oJdwtpyGpxKbHM9m4wGg==}
+    peerDependencies:
+      ethers: ^5.6.8
+    dependencies:
+      ethers: 5.7.1
+      socket.io-client: 4.5.2
+      tslib: 2.4.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /@pushprotocol/uiembed/0.1.1:
+    resolution: {integrity: sha512-Qead6eGlvrCYscipWFELJGRAkLsV8vcXcAhLdPUv7UrhNHyX2Rv+/Cn83ciUEQY1ItF5Gp5Vb8lOkdkV17/cog==}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
 
   /@radix-ui/primitive/1.0.0:
     resolution: {integrity: sha512-3e7rn8FDMin4CgeL7Z/49smCA3rFYY3Ha2rUQ7HRWFadS5iCRw08ZgVT1LaNTCNqgvrUiyczLflrVrF0SRQtNA==}
@@ -4929,6 +4970,15 @@ packages:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
       follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.2
+      form-data: 4.0.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -7866,6 +7916,15 @@ packages:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       mime-types: 2.1.35
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
 
   /forwarded/0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
@@ -14036,6 +14095,11 @@ packages:
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
 
   /v8-to-istanbul/8.1.1:
     resolution: {integrity: sha512-FGtKtv3xIpR6BYhvgH8MI/y78oT7d8Au3ww4QIxymrCtZEh5b8gCw2siywE+puhEmuWKDtmfrvF5UlB298ut3w==}
