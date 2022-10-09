@@ -1,6 +1,8 @@
 import {useEthers} from "@usedapp/core";
 import {useModal} from "../hooks/useModal";
 import {ConnectWalletModal} from "./ConnectWalletModal";
+import {StreamFeed} from "./stream/StreamFeed"
+
 
 function Home() {
   const { account } = useEthers()

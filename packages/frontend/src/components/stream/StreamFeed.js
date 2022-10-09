@@ -3,7 +3,7 @@
 
 
 
-export default function GetStreamById() {
+export function StreamFeed() {
     const [getStreamInfo, setGetStreamInfo] = useState('');
   
     async function getStream() {
