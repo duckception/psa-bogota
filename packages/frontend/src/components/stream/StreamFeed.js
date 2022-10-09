@@ -35,29 +35,28 @@ export function StreamFeed() {
   
         {!getStreamInfo ? null : (
           <div className={styles.card} key={getStreamInfo.id}>
-            <a href={`/streams/${getStreamInfo.id}`}>
               {getStreamInfo.isActive ? (
-                <a>
+                <>
                   <Player
                     playbackId={`${getStreamInfo.playbackId}`}
-                    autoPlay={false}
-                    width={700}
+                    autoPlay={true}
+                    width={300}
                     loop
                     muted
+                    controls={{autohide: 0, hotkeys: false}}
                   />
                   <p>Stream Status:</p>
                   <p className={styles.ready}>Live Now!</p>
                   <p> {getStreamInfo.name} </p>
-                </a>
+                </>
               ) : (
-                <a>
+                <>
                   <img src={logo} alt='Livepeer Studio Logo' width='50' height='50' />
                   <h2> {getStreamInfo.name} </h2>
                   <p>Stream Status:</p>
                   <p className={styles.failed}>Not Live</p>
-                </a>
+                </>
               )}
-            </a>
           </div>
         )}
       </main>

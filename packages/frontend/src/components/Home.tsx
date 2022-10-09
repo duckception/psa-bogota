@@ -2,6 +2,8 @@ import {useEthers} from "@usedapp/core";
 import {useModal} from "../hooks/useModal";
 import {ConnectWalletModal} from "./ConnectWalletModal";
 import {StreamFeed} from "./stream/StreamFeed"
+import styled from 'styled-components'
+
 
 
 function Home() {
@@ -20,9 +22,20 @@ function Home() {
           onRequestClose={toggle}
         />
       )}
-      <StreamFeed/>
+
+      {!isShown && account ? 
+      <StreamFeedWrapper>
+        <StreamFeed/> 
+
+      </StreamFeedWrapper>
+      : null}
     </>
   )
 }
+
+const StreamFeedWrapper = styled.div`
+  width: 48vw;
+  height: 27vh;
+`
 
 export default Home
