@@ -118,6 +118,8 @@ function Home() {
       <br/>
       <br/>
       <button onClick={() => doThis()}>{isStart ? 'Play' : 'Pause'}</button>
+
+      <StreamFeed/>
     </>
   )
 }
