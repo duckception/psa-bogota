@@ -10,9 +10,9 @@ import {NETWORK_CONNECTIONS} from "./constants/chains";
 const config: Config = {
   readOnlyChainId: Optimism.chainId,
   readOnlyUrls: NETWORK_CONNECTIONS,
-  pollingInterval: 100,
+  pollingInterval: 500,
   notifications: {
-    checkInterval: 100
+    checkInterval: 500
   }
 }
 

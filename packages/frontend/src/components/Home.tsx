@@ -70,6 +70,7 @@ function Home() {
         console.log('after receipt')
         console.log(txnReceipt)
         setIsStart(!isStart)
+        setVisible(true)
       } catch (e) {
         console.error('FAIL')
         console.error(e)
@@ -93,6 +94,7 @@ function Home() {
         console.log('after receipt')
         console.log(txnReceipt)
         setIsStart(!isStart)
+        setVisible(false)
       } catch (e) {
         console.error('FAIL')
         console.error(e)
