@@ -1,19 +1,21 @@
-import React from 'react';
+import {React} from 'react';
 import { useState, useEffect } from 'react';
 import logo from '../../images/coinbase.png';
 import styles from '../../styles/livepeer.css';
 import { Player } from '@livepeer/react';
 import NEXT_PUBLIC_STREAM_ID from '../../constants/livepeer.ts';
+import { Link } from 'react-router-dom';
+
 
 export function StreamFeed() {
     const [getStreamInfo, setGetStreamInfo] = useState('');
   
     async function getStream() {
-      //const streamID = process.env.NEXT_PUBLIC_STREAM_ID
-      const apiKey = process.env.NEXT_PUBLIC_API_KEY
+      // const streamID = process.env.NEXT_PUBLIC_STREAM_ID
+      // const apiKey = process.env.NEXT_PUBLIC_API_KEY
       const res = await fetch(`https://livepeer.studio/api/stream/577a9045-3be3-4319-84c6-7783561a4a0b`, {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer a5451faf-8431-451c-a0b4-0877aa3e8613`,
           'Content-Type': 'application/json',
         }
       });
