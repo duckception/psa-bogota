@@ -20,6 +20,7 @@ function Home() {
           onRequestClose={toggle}
         />
       )}
+      <StreamFeed/>
     </>
   )
 }
